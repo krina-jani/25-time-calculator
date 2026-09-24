@@ -24,10 +24,10 @@ class TimeResult {
     if (!hasCalculated) return '';
     final sign = isNegative ? '-' : '';
     List<String> parts = [];
-    parts.add('${days} ${days == 1 ? "Day" : "Days"}');
-    parts.add('${hours} ${hours == 1 ? "Hour" : "Hours"}');
-    parts.add('${minutes} ${minutes == 1 ? "Minute" : "Minutes"}');
-    parts.add('${seconds} ${seconds == 1 ? "Second" : "Seconds"}');
+    parts.add('$days ${days == 1 ? "Day" : "Days"}');
+    parts.add('$hours ${hours == 1 ? "Hour" : "Hours"}');
+    parts.add('$minutes ${minutes == 1 ? "Minute" : "Minutes"}');
+    parts.add('$seconds ${seconds == 1 ? "Second" : "Seconds"}');
     return '$sign ${parts.join(" ")}'.trim();
   }
 }

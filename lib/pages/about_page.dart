@@ -42,9 +42,12 @@ class AboutPage extends StatelessWidget {
         iconTheme: const IconThemeData(color: Color(0xFF1E293B)),
       ),
       body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-          child: Column(
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 800),
+            child: SingleChildScrollView(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+              child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // 1. Legal & Governance Section
@@ -233,8 +236,10 @@ class AboutPage extends StatelessWidget {
           ),
         ),
       ),
-    );
-  }
+    ),
+  ),
+);
+}
 
   Widget _buildSectionHeader(String title) {
     return Text(
@@ -325,7 +330,7 @@ class AboutPage extends StatelessWidget {
       width: 40,
       height: 40,
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(8),
       ),
       child: Icon(icon, color: color, size: 22),
