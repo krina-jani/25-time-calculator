@@ -113,13 +113,17 @@ class PrivacyPolicyPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 16),
                         Container(
+                          width: double.infinity,
                           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                           decoration: BoxDecoration(
                             color: Colors.black.withValues(alpha: 0.15),
                             borderRadius: BorderRadius.circular(8),
                           ),
-                          child: const Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          child: const Wrap(
+                            alignment: WrapAlignment.spaceBetween,
+                            crossAxisAlignment: WrapCrossAlignment.center,
+                            spacing: 12,
+                            runSpacing: 6,
                             children: [
                               Text(
                                 'Effective Date: September 21, 2026',
@@ -370,12 +374,14 @@ class PrivacyPolicyPage extends StatelessWidget {
                                   ),
                                 ),
                                 const SizedBox(width: 12),
-                                const Text(
-                                  'Phone: +91 63543 51080',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                    color: Color(0xFF16A34A),
+                                const Expanded(
+                                  child: Text(
+                                    'Phone: +91 63543 51080',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xFF16A34A),
+                                    ),
                                   ),
                                 ),
                               ],
